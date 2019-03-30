@@ -21,7 +21,7 @@ struct Process {
 /// </summary>
 /// <param name="processName">The name of the process</param>
 /// <returns>ID of the process</returns>
-DWORD GetProcessId(LPSTR processName);
+DllExport DWORD GetProcessId(LPSTR processName);
 
 
 /// <summary>
@@ -29,7 +29,7 @@ DWORD GetProcessId(LPSTR processName);
 /// </summary>
 /// <param name="processName">The name of the process</param>
 /// <returns>HANDLE of the process</returns>
-HANDLE GetProcessHandle(LPSTR processName);
+DllExport HANDLE GetProcessHandle(LPSTR processName);
 
 
 /// <summary>
@@ -37,7 +37,7 @@ HANDLE GetProcessHandle(LPSTR processName);
 /// </summary>
 /// <param name="processName">The name of the process</param>
 /// <returns>The process information</returns>
-Process GetProcessInfo(LPSTR processName);
+DllExport Process GetProcessInfo(LPSTR processName);
 
 
 /// <summary>
@@ -46,7 +46,7 @@ Process GetProcessInfo(LPSTR processName);
 /// <param name="moduleName">The name of the module to be searched</param>
 /// <param name="processName">The name of the process where the module is located</param>
 /// <returns>The module's info</returns>
-MODULEINFO GetMainModuleInfo(LPSTR moduleName, LPSTR processName);
+DllExport MODULEINFO GetMainModuleInfo(LPSTR moduleName, LPSTR processName);
 
 
 /// <summary>
@@ -54,6 +54,6 @@ MODULEINFO GetMainModuleInfo(LPSTR moduleName, LPSTR processName);
 /// </summary>
 /// <param name="processName">Name of the process</param>
 /// <returns>All threads in the process</returns>
-std::vector<DWORD> GetProcessThreadsIds(LPSTR processName);
+DllExport std::vector<DWORD> GetProcessThreadsIds(LPSTR processName);
 
 
