@@ -13,7 +13,7 @@ DWORD GetProcessId(LPSTR processName) {
 	{
 		while (Process32Next(snapshot, &entry) == TRUE)
 		{
-			if (strcmp((LPSTR)entry.szExeFile, processName) == 0)
+			if (strcmp(entry.szExeFile, processName) == 0)
 			{
 				processId = entry.th32ProcessID;
 				break;
@@ -38,7 +38,7 @@ HANDLE GetProcessHandle(LPSTR processName) {
 	{
 		while (Process32Next(snapshot, &entry) == TRUE)
 		{
-			if (strcmp((LPSTR)entry.szExeFile, processName) == 0)
+			if (strcmp(entry.szExeFile, processName) == 0)
 			{
 				hProcess = OpenProcess(PROCESS_ALL_ACCESS, FALSE, entry.th32ProcessID);
 				break;
